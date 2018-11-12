@@ -1,11 +1,11 @@
 # java11-ORed-container
 Showcase of ORed container.
 
-Example: characteristics of Spliterator.
+Example: characteristics of `Spliterator`.
 
 # preface
 It's not a proper way of programming, we provide it mainly
-for informational purpose and because of Spliterator's characteristics
+for informational purpose and because of `Spliterator`'s characteristics
 construction.
 
 # project description
@@ -30,3 +30,23 @@ class Person {
     }
 }
 ```
+* we put characteristics linked with `OR` in a constructor, for example:
+    ```
+    new Person(Person.OPEN_MINDED | Person.INTELLIGENT | Person.ATHLETIC);
+    ```
+* we check if a given person has some characteristics:
+    ```
+    person.hasCharacteristics(Person.OPEN_MINDED)
+    ```
+* simply:
+    * `|` is like a put to the set
+    * `&` and then `==` is something like contains
+
+# tests
+* `BinaryArithmetic` - we show why defined above operations are
+correct:
+    * conversion from hex to binary
+    * OR
+    * AND
+* `PersonTest` - we construct person with some characteristics and
+then check if `hasCharacteristics` is correct
